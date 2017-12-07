@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>%level{length=1} %date{MMdd-HHmm:ss,SSS} %logger{1.} %message [%thread]%n</pattern>
+            </PatternLayout>
+        </Console>
+        <File name="stats" fileName="log/server-status.log">
+            <PatternLayout>
+                <pattern>%date{MMdd-HHmm:ss} %message%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="stats" level="info">
+            <AppenderRef ref="stats"/>
+        </Logger>
+        <Logger name="org.apache" level="info"/>
+        <Root level="DEBUG">
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

@@ -1,0 +1,19 @@
+Installation:
+
+1. Install Java (at least 1.8) and Maven.
+
+2. Run in command line:
+
+    'mvn clean install'
+
+3.Run in command line:
+
+    'java -jar target/test-sauce-1.0-SNAPSHOT.jar -Dlog4j.configurationFile=log4j2.xml -DperiodSec=10'
+
+You can specify host to monitor and period of health checks with parameters:
+
+-DperiodSec=10 - monitoring period in seconds
+-DcheckHost=http://host:port - server address to monitor
+
+4. Find server health monitor log either in command line , or in file:
+    ./log/server-status.log

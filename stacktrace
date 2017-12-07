@@ -1,0 +1,27 @@
+ws-43:test-sauce sergeyr$ python server.py
+Traceback (most recent call last):
+  File "server.py", line 4, in <module>
+    from twisted.internet import reactor
+  File "/Library/Python/2.7/site-packages/twisted/internet/reactor.py", line 38, in <module>
+    from twisted.internet import default
+  File "/Library/Python/2.7/site-packages/twisted/internet/default.py", line 56, in <module>
+    install = _getInstallFunction(platform)
+  File "/Library/Python/2.7/site-packages/twisted/internet/default.py", line 50, in _getInstallFunction
+    from twisted.internet.selectreactor import install
+  File "/Library/Python/2.7/site-packages/twisted/internet/selectreactor.py", line 18, in <module>
+    from twisted.internet import posixbase
+  File "/Library/Python/2.7/site-packages/twisted/internet/posixbase.py", line 18, in <module>
+    from twisted.internet import error, udp, tcp
+  File "/Library/Python/2.7/site-packages/twisted/internet/tcp.py", line 28, in <module>
+    from twisted.internet._newtls import (
+  File "/Library/Python/2.7/site-packages/twisted/internet/_newtls.py", line 21, in <module>
+    from twisted.protocols.tls import TLSMemoryBIOFactory, TLSMemoryBIOProtocol
+  File "/Library/Python/2.7/site-packages/twisted/protocols/tls.py", line 63, in <module>
+    from twisted.internet._sslverify import _setAcceptableProtocols
+  File "/Library/Python/2.7/site-packages/twisted/internet/_sslverify.py", line 38, in <module>
+    TLSVersion.TLSv1_1: SSL.OP_NO_TLSv1_1,
+AttributeError: 'module' object has no attribute 'OP_NO_TLSv1_1'
+
+this helped:
+sudo pip install Twisted==16.0.0
+
